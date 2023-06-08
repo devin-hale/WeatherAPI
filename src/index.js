@@ -1,3 +1,6 @@
 import forecast from "./modules/logic/weatherAPI";
+import { currentWeather } from "./modules/logic/dataParse";
 
-forecast('London');
+const forecastStuff = await forecast('London');
+
+currentWeather(forecastStuff);
