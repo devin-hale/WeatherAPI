@@ -1,0 +1,46 @@
+# Weather API
+
+# 6-8-2023
+
+    Goal with this project: less spaghetti code.  Plan more thoroughly.  Stick to the plan once its made.
+
+    Requirements:
+        - Given a city name, pull current weather data from weather API and display it on the screen.
+            Details to display:
+                Central 'Today' Display
+                    Current Temp, Low, High, Condition(with Icon), Precipitation, Humidity, Wind Speed
+                Hourly for day
+                    Low Temp, High Temp, Precip, and Condition
+                7 day Forecast
+                    Low Temp, High Temp, Precip, and Condition
+                
+        - User can search city name.
+            Search bar autocompletes, displays compatible results.
+    
+        - Saves last location
+        - Loads last location on start, if it exists
+        - Maybe use the user's geolocation to determine the nearest city, and load based off of that as the default?
+
+    Display/Styling:
+        - Mobile first.
+        - Search bar sits at top.
+        - Background changes based on night/day, and weather condition.
+            - Maybe make some gifs/MP4's that overlay animations?
+        - Everything must transition, and look good.
+        - Loading screen while API call happens.
+
+# Logic
+
+    - I'm gonna start with the logic before anything.  Just dealing with data.
+    - Weather API module:
+        - Realtime Pull
+        - Forecast Pull
+        - Time Zone Pull
+            - It's likely that all three of these will get pulled at the same time.
+            - Just takes a city name.
+            - Want: Current Temp, Low, High, Condition(with Icon), Precipitation, Humidity, Wind Speed
+            - Build them separately, and then later call them individually within a larger 'Load' function
+
+        - Search/Autocomplete Pull
+            - Given a search term, return location matches.
+            - These can then be passed into a load when clicked on.
