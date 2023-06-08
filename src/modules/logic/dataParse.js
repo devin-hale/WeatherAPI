@@ -20,12 +20,23 @@ const timeConvert = (string) => {
     }
 }
 
+//Converts Date to Day of the Week
+const dayConvert = (date) => {
+    const newDate = new Date(date.replace('-', '/'));
+    const day = newDate.getDay();
+    const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    return dayNames[day];
+}
+
 
 
 //Takes forecastData from weatherAPI, and parses out the needed current weather info into an object.
 const currentWeather = (forecastData) => {
     const current = forecastData.current
     const currentData = {
+        location: forecastData.location.name,
+        region: forecastData.location.region,
         localtime: timeConvert(forecastData.location.localtime),
         condition: current.condition,
         is_day: current.is_day,
@@ -57,4 +68,21 @@ const hourlyWeather = (forecastData) => {
     return hourlyWeather;
 }
 
-export {currentWeather, hourlyWeather}
+const sevenDayWeather = (forecastData) => {
+    const sevenDayWeather = [];
+    forecastData.forecast.forecastday.forEach(obj => {
+        sevenDayWeather.push({
+            day: dayConvert(obj.date),
+            condition: obj.day.condition,
+            temp_c: obj.day.avgtemp_c,
+            temp_f: obj.day.avgtemp_f
+        })
+    })
+
+    console.log(sevenDayWeather);
+    return sevenDayWeather;
+}
+
+
+
+export {currentWeather, hourlyWeather, sevenDayWeather}
