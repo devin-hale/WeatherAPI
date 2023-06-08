@@ -31,6 +31,10 @@ const currentWeather = (forecastData) => {
         is_day: current.is_day,
         temp_c: current.temp_c,
         temp_f: current.temp_f,
+        high_c: forecastData.forecast.forecastday[0].day.maxtemp_c,
+        high_f: forecastData.forecast.forecastday[0].day.maxtemp_f,
+        low_c: forecastData.forecast.forecastday[0].day.mintemp_c,
+        low_f: forecastData.forecast.forecastday[0].day.mintemp_f,
         wind_mph: current.wind_mph,
         wind_kph: current.wind_kph,
         precip_in: current.precip_in,
@@ -39,4 +43,18 @@ const currentWeather = (forecastData) => {
     console.log(currentData);
 }
 
-export {currentWeather}
+const hourlyWeather = (forecastData) => {
+    const hourlyWeather = [];
+    forecastData.forecast.forecastday[0].hour.forEach(obj => {
+        hourlyWeather.push({
+            condition: obj.condition,
+            is_day: obj.is_day,
+            temp_c: obj.temp_c,
+            temp_f: obj.temp_f
+        })
+    })
+    console.log(hourlyWeather);
+    return hourlyWeather;
+}
+
+export {currentWeather, hourlyWeather}
