@@ -1,6 +1,6 @@
-import forecast from "./weatherAPI";
 
-// Parses forecastData time to AM/PM
+
+// Parses forecastData time to AM/PM.
 const timeConvert = (string) => {
     let substring = string.substring(string.length - 5).replace(':', '')
     let returnString;
@@ -23,7 +23,6 @@ const timeConvert = (string) => {
 
 
 //Takes forecastData from weatherAPI, and parses out the needed current weather info into an object.
-
 const currentWeather = (forecastData) => {
     const current = forecastData.current
     const currentData = {
