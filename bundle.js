@@ -1,0 +1,1 @@
+(()=>{"use strict";document.getElementById("searchBar").addEventListener("change",(e=>{console.log("Yeah!")}))})();
