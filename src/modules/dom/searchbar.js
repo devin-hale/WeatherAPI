@@ -1,6 +1,8 @@
 import search from "../logic/search"
 import forecast from "../logic/weatherAPI"
 import renderCurrent from "./locationCurrent"
+import render7Day from "./render7Day"
+import renderHourly from "./renderHourly"
 
 
 const searchInitialize = () => {
@@ -26,9 +28,13 @@ const searchInitialize = () => {
                 document.getElementById('searchResults').appendChild(resultDiv);
 
                 // Click listener to load the result.
-                resultDiv.addEventListener('click', async() => {
+                resultDiv.addEventListener('mousedown', async() => {
                     let targetLoc = await forecast(`${result.name}, ${result.region}`);
                     renderCurrent(targetLoc);
+                    render7Day(targetLoc);
+                    renderHourly(targetLoc);
+
+
                     //Resets searchbar
                     searchBar.value = '';
                     document.getElementById('searchResults').textContent = '';
@@ -36,6 +42,11 @@ const searchInitialize = () => {
             })
             return
         }
+    })
+
+    searchBar.addEventListener('blur', () => {
+        searchBar.value = '';
+        document.getElementById('searchResults').textContent = '';
     })
 }
 

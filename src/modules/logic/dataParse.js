@@ -66,7 +66,6 @@ const hourlyWeather = (forecastData) => {
             temp_f: `${obj.temp_f}°`
         })
     })
-    console.log(hourlyWeather);
     return hourlyWeather;
 }
 
@@ -80,8 +79,6 @@ const sevenDayWeather = (forecastData) => {
             temp_f: `${obj.day.avgtemp_f}°`
         })
     })
-
-    console.log(sevenDayWeather);
     return sevenDayWeather;
 }
 

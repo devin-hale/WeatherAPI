@@ -88,3 +88,19 @@
 .conditionTemp{
     font-size: 50px;
 }
+
+#hourlyWeather {
+    width: 90%;
+    display: flex;
+    overflow-x: scroll;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.hourDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
