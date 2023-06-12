@@ -1,0 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+#searchResults, .resultDiv {
+    border: 1px solid black;
+}
