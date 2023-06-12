@@ -4,7 +4,7 @@
 const timeConvert = (string) => {
     let substring = string.substring(string.length - 5).replace(':', '')
     let returnString;
-    if (Number(substring) >= 1200 && Number(substring) < 2200) {
+    if (Number(substring) >= 1300 && Number(substring) < 2200) {
         substring -= 1200
         returnString = substring.toString().slice(0,1) + ':' + substring.toString().slice(1,3) + ' PM'
         return returnString
@@ -15,9 +15,11 @@ const timeConvert = (string) => {
         return returnString
     }
     else if (Number(substring) < 1200) {
-        returnString = substring.toString().slice(0,1) + ':' + substring.toString().slice(1,3) + ' AM'
+        returnString = substring.toString().slice(0,2) + ':' + substring.toString().slice(2,4) + ' AM'
         return returnString
     }
+    returnString = substring.toString().slice(0,2) + ':' + substring.toString().slice(2,4) + ' PM'
+        return returnString
 }
 
 //Converts Date to Day of the Week
@@ -40,18 +42,18 @@ const currentWeather = (forecastData) => {
         localtime: timeConvert(forecastData.location.localtime),
         condition: current.condition,
         is_day: current.is_day,
-        temp_c: current.temp_c,
-        temp_f: current.temp_f,
-        high_c: forecastData.forecast.forecastday[0].day.maxtemp_c,
-        high_f: forecastData.forecast.forecastday[0].day.maxtemp_f,
-        low_c: forecastData.forecast.forecastday[0].day.mintemp_c,
-        low_f: forecastData.forecast.forecastday[0].day.mintemp_f,
+        temp_c: `${current.temp_c}°`,
+        temp_f: `${current.temp_f}°`,
+        high_c: `${forecastData.forecast.forecastday[0].day.maxtemp_c}°`,
+        high_f: `${forecastData.forecast.forecastday[0].day.maxtemp_f}°`,
+        low_c: `${forecastData.forecast.forecastday[0].day.mintemp_c}°`,
+        low_f: `${forecastData.forecast.forecastday[0].day.mintemp_f}°`,
         wind_mph: current.wind_mph,
         wind_kph: current.wind_kph,
         precip_in: current.precip_in,
         precip_mm: current.precip_mm,
     }
-    console.log(currentData);
+    return currentData;
 }
 
 const hourlyWeather = (forecastData) => {
@@ -60,8 +62,8 @@ const hourlyWeather = (forecastData) => {
         hourlyWeather.push({
             condition: obj.condition,
             is_day: obj.is_day,
-            temp_c: obj.temp_c,
-            temp_f: obj.temp_f
+            temp_c: `${obj.temp_c}°`,
+            temp_f: `${obj.temp_f}°`
         })
     })
     console.log(hourlyWeather);
@@ -74,8 +76,8 @@ const sevenDayWeather = (forecastData) => {
         sevenDayWeather.push({
             day: dayConvert(obj.date),
             condition: obj.day.condition,
-            temp_c: obj.day.avgtemp_c,
-            temp_f: obj.day.avgtemp_f
+            temp_c: `${obj.day.avgtemp_c}°`,
+            temp_f: `${obj.day.avgtemp_f}°`
         })
     })
 
