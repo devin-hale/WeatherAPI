@@ -6,6 +6,7 @@ const currentHour = (string) => {
 }
 
 const renderHourly = (forecastData) => {
+    //Reset hourlyweather div.
     document.getElementById('hourlyWeather').textContent = '';
 
     let hourlyData = hourlyWeather(forecastData);
@@ -13,6 +14,7 @@ const renderHourly = (forecastData) => {
 
     let hourlyDiv = document.getElementById('hourlyWeather');
 
+    //Iterate through hourly forecast, and create div for each.
     for (let i = 0; i < hourlyData.length; i++) {
         let hourDiv = document.createElement('div');
         hourDiv.classList = 'hourDiv';
@@ -45,8 +47,13 @@ const renderHourly = (forecastData) => {
         hourlyDiv.appendChild(hourDiv);
     }
 
-    console.log(currentHour(forecastData.location.localtime))
+    //Scroll Current Hour into View Automatically
     document.getElementById(`viewID#${currentHour(forecastData.location.localtime)}`).scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+    
+
+
+
 }
 
 export default renderHourly;

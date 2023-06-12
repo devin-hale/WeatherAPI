@@ -29,6 +29,7 @@ const searchInitialize = () => {
 
                 // Click listener to load the result.
                 resultDiv.addEventListener('mousedown', async() => {
+                    
                     let targetLoc = await forecast(`${result.name}, ${result.region}`);
                     renderCurrent(targetLoc);
                     render7Day(targetLoc);

@@ -14,8 +14,12 @@ const timeConvert = (string) => {
         returnString = substring.toString().slice(0,2) + ':' + substring.toString().slice(1,3) + ' PM'
         return returnString
     }
-    else if (Number(substring) < 1200) {
+    else if (Number(substring) < 1200 && Number(substring) >= 100) {
         returnString = substring.toString().slice(0,2) + ':' + substring.toString().slice(2,4) + ' AM'
+        return returnString
+    }
+    else if (Number(substring) < 100) {
+        returnString = '12:' + substring.toString().slice(2,4) + ' AM'
         return returnString
     }
     returnString = substring.toString().slice(0,2) + ':' + substring.toString().slice(2,4) + ' PM'
