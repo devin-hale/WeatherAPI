@@ -26,7 +26,7 @@ const render7Day = (forecastData) => {
 
         let weekCon = document.createElement('img');
         weekCon.classList = 'weekCon';
-        weekCon.src = obj.condition.icon;
+        weekCon.src = 'https:' + obj.condition.icon;
         dayDiv.appendChild(weekCon);
 
         let weekTemp = document.createElement('p');
