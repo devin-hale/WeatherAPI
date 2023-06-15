@@ -90,6 +90,7 @@
 }
 
 #hourlyWeather {
+    user-select: none;
     width: 90%;
     display: flex;
     overflow-x: auto;
@@ -104,4 +105,44 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.hourDiv > img {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+::-webkit-scrollbar {
+    height: 7.5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+#loaderContainer {
+    display: none;
+    transition: .5s;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background: #ffffff
+        url("assets/1496.gif") center
+        no-repeat;
+    z-index: 2;
 }
