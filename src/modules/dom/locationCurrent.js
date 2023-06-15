@@ -16,8 +16,14 @@ const renderCurrent = (forecastData) => {
         //Location Name Display
         let locationName = document.createElement('p');
         locationName.classList = 'locationName';
-        locationName.innerHTML = `${currentData.location}, ${currentData.region}`;
+        locationName.innerHTML = `${currentData.location}`;
         currentHeader.appendChild(locationName);
+
+        //Region Display
+        let regionName = document.createElement('p');
+        regionName.classList = 'regionName';
+        regionName.innerHTML = `${currentData.region}`;
+        currentHeader.appendChild(regionName);
 
         //Time Display
         let localTime = document.createElement('p');

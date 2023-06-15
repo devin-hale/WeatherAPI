@@ -1,5 +1,6 @@
 import search from "../logic/search"
 import forecast from "../logic/weatherAPI"
+import bgRender from "./bgRender"
 import renderCurrent from "./locationCurrent"
 import render7Day from "./render7Day"
 import renderHourly from "./renderHourly"
@@ -34,6 +35,7 @@ const searchInitialize = () => {
                     renderCurrent(targetLoc);
                     render7Day(targetLoc);
                     renderHourly(targetLoc);
+                    bgRender(targetLoc);
 
 
                     //Resets searchbar

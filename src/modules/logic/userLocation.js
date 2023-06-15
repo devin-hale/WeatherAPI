@@ -1,3 +1,5 @@
+//gets user coordinates, returns in a format accepted by the weather API
+
 const getCoordinates = async () => {
     const successCB = (position) => {
       return position.coords.latitude + ',' + position.coords.longitude;
