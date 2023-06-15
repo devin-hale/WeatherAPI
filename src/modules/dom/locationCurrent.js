@@ -1,5 +1,8 @@
 import { currentWeather } from "../logic/dataParse"
 
+//Renders current weather data to HTML
+
+
 const renderCurrent = (forecastData) => {
     let currentData = currentWeather(forecastData);
     console.log(currentData);

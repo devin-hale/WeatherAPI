@@ -47,6 +47,7 @@ const searchInitialize = () => {
         }
     })
 
+    //Removes Search Results when bar is unfocused
     searchBar.addEventListener('blur', () => {
         searchBar.value = '';
         document.getElementById('searchResults').textContent = '';

@@ -1,3 +1,4 @@
+
 //gets user coordinates, returns in a format accepted by the weather API
 
 const getCoordinates = async () => {

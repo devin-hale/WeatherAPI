@@ -1,13 +1,19 @@
 import { sevenDayWeather } from "../logic/dataParse"
 
+
+// Renders 7 Day Forecast to HTML
+
 const render7Day = (forecastData) => {
+    //Reset 7 Day Forecast
     document.getElementById('weeklyWeather').textContent = '';
 
+    //Get forecast Data
     let sevenDayData = sevenDayWeather(forecastData);
-    console.log(sevenDayData);
 
+    //Define container
     const weeklyContainer = document.getElementById('weeklyWeather')
 
+    //Render
     sevenDayData.forEach( obj => {
 
         let dayDiv = document.createElement('div');

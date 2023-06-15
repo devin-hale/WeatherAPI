@@ -60,6 +60,7 @@ const currentWeather = (forecastData) => {
     return currentData;
 }
 
+//Takes forecastData from weatherAPI, and parses out the needed hourly weather info into an object.
 const hourlyWeather = (forecastData) => {
     const hourlyWeather = [];
     forecastData.forecast.forecastday[0].hour.forEach(obj => {
@@ -73,6 +74,7 @@ const hourlyWeather = (forecastData) => {
     return hourlyWeather;
 }
 
+//Takes forecastData from weatherAPI, and parses out the needed 7 day forecast info into an object.
 const sevenDayWeather = (forecastData) => {
     const sevenDayWeather = [];
     forecastData.forecast.forecastday.forEach(obj => {
