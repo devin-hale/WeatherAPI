@@ -1,6 +1,8 @@
 import { sevenDayWeather } from "../logic/dataParse"
 
 const render7Day = (forecastData) => {
+    document.getElementById('weeklyWeather').textContent = '';
+
     let sevenDayData = sevenDayWeather(forecastData);
     console.log(sevenDayData);
 

@@ -1,6 +1,15 @@
+@import url('https://fonts.cdnfonts.com/css/jetbrains-mono-2');
+
 * {
     margin: 0;
     padding: 0;
+}
+
+#content {
+    font-family: 'JetBrains Mono', sans-serif;
+    background: rgb(0,232,255);
+    background: radial-gradient(circle, rgba(0,232,255,1) 0%, rgba(68,129,239,1) 100%);
+    height: 100vh;
 }
 
 #searchContainer {
@@ -15,6 +24,7 @@
 }
 
 #searchBar {
+    font-family: 'JetBrains Mono', sans-serif;
     width: 95%;
     max-width: 400px;
     margin: 5px;
@@ -108,7 +118,6 @@
 }
 
 .hourDiv > img {
-    user-drag: none;
     -webkit-user-drag: none;
     user-select: none;
     -moz-user-select: none;
@@ -147,3 +156,38 @@
     z-index: 2;
 }
 
+#weeklyWeather {
+    width: 90%;
+    max-width: 350px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    max-height: 350px;
+}
+
+.dayDiv {
+    max-height: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.weekCon {
+    width: auto;
+    height: 35px;
+}
+
+.dayDivWD {
+    font-size: 17px;
+    justify-self: right;
+}
+
+.weekTemp {
+    justify-self: left;
+    font-size: 17px;
+}
