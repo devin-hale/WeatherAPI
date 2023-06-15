@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/dwhale2/WeatherAPI/issues"
   },
-  "homepage": "https://dwhale2.github.io/WeatherAPI",
+  "homepage": "https://dwhale2.github.io/WeatherAPI/",
   "devDependencies": {
     "css-loader": "^6.8.1",
     "style-loader": "^3.3.3",
