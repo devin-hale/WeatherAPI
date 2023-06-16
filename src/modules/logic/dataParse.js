@@ -28,11 +28,12 @@ const timeConvert = (string) => {
 
 //Converts Date to Day of the Week
 const dayConvert = (date) => {
-    const newDate = new Date(date.replace('-', '/'));
-    const day = newDate.getDay();
+    const [year, month, day] = date.split('-');
+    const newDate = new Date(year, month - 1, day); // Month value should be zero-based
+    const dayIndex = newDate.getDay();
     const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-    return dayNames[day];
+    return dayNames[dayIndex];
 }
 
 
